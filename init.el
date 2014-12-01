@@ -1,8 +1,10 @@
-; setting up package repositories
-(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
-                         ("marmalade" . "https://marmalade-repo.org/packages/")
-                         ("melpa" . "http://melpa.milkbox.net/packages/")))
 (setq package-enable-at-startup nil)
-(package-initialize)
+; setting up package repositories
+(when (>= emacs-major-version 24)
+  (require 'package)
+  (package-initialize)
+  (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
+  (add-to-list 'package-archives '("marmalade" . "https://marmalade-repo.org/packages/") t))
+(global-linum-mode t)
 (load-theme 'zenburn t)
 (add-to-list 'exec-path "/usr/local/bin")
