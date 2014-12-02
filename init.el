@@ -5,6 +5,13 @@
   (package-initialize)
   (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
   (add-to-list 'package-archives '("marmalade" . "https://marmalade-repo.org/packages/") t))
+
 (global-linum-mode t)
 (load-theme 'zenburn t)
 (add-to-list 'exec-path "/usr/local/bin")
+
+; gradle junk
+(autoload 'groovy-mode "groovy-mode" "Major mode for editing Groovy code" t)
+(add-to-list 'auto-mode-alist '("\.groovy$" . groovy-mode))
+(add-to-list 'auto-mode-alist '("\.gradle$" . groovy-mode))
+(add-to-list 'interpreter-mode-alist '("groovy" . groovy-mode))
