@@ -15,3 +15,11 @@
 (add-to-list 'auto-mode-alist '("\.groovy$" . groovy-mode))
 (add-to-list 'auto-mode-alist '("\.gradle$" . groovy-mode))
 (add-to-list 'interpreter-mode-alist '("groovy" . groovy-mode))
+
+; paredit
+(add-hook 'clojure-mode-hook
+  (lambda () (paredit-mode)))
+(add-hook 'cider-repl-mode-hook 'paredit-mode)
+
+; make the evil evil tabs go away
+(setq-default indent-tabs-mode nil)
