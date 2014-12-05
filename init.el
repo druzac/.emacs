@@ -8,7 +8,6 @@
 
 (global-linum-mode t)
 (load-theme 'zenburn t)
-(add-to-list 'exec-path "/usr/local/bin")
 
 ; gradle junk
 (autoload 'groovy-mode "groovy-mode" "Major mode for editing Groovy code" t)
