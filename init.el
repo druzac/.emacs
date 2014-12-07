@@ -22,3 +22,7 @@
 
 ; make the evil evil tabs go away
 (setq-default indent-tabs-mode nil)
+
+; ugh - package to fix path for OS X
+(when (memq window-system '(mac ns))
+  (exec-path-from-shell-initialize))
