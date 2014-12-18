@@ -6,7 +6,6 @@
   (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
   (add-to-list 'package-archives '("marmalade" . "https://marmalade-repo.org/packages/") t))
 
-(global-linum-mode t)
 (load-theme 'zenburn t)
 
 ; gradle junk
@@ -26,3 +25,5 @@
 ; ugh - package to fix path for OS X
 (when (memq window-system '(mac ns))
   (exec-path-from-shell-initialize))
+
+(add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
