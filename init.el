@@ -25,3 +25,6 @@
 ; ugh - package to fix path for OS X
 (when (memq window-system '(mac ns))
   (exec-path-from-shell-initialize))
+
+; column number in the mode line
+(setq column-number-mode t)
