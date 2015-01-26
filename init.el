@@ -19,6 +19,8 @@
   (lambda () (paredit-mode)))
 (add-hook 'cider-repl-mode-hook 'paredit-mode)
 
+(add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
+
 ; make the evil evil tabs go away
 (setq-default indent-tabs-mode nil)
 
