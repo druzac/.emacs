@@ -30,3 +30,9 @@
 
 ; column number in the mode line
 (setq column-number-mode t)
+
+; uniquify buffers
+(require 'uniquify)
+(setq
+ uniquify-buffer-name-style 'reverse
+ uniquify-separator ":")
