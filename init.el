@@ -52,6 +52,11 @@
   (lambda () (paredit-mode)))
 (add-hook 'cider-repl-mode-hook 'paredit-mode)
 
+;; haskell junk
 (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
 
+;; magit junk
 (setq magit-last-seen-setup-instructions "1.4.0")
+
+;; c settings
+(setq-default c-basic-offset 4)
