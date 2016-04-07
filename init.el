@@ -55,8 +55,34 @@
 ;; haskell junk
 (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
 
+;; fix org mode C-j vs RET nonsense
+(add-hook 'org-mode-hook (lambda ()
+                           (progn (local-set-key (kbd "C-j") #'org-return)
+                                  (local-set-key (kbd "RET") #'org-return-indent))))
+
 ;; magit junk
 (setq magit-last-seen-setup-instructions "1.4.0")
 
+;; hide menu
+(menu-bar-mode -1)
+
 ;; c settings
 (setq-default c-basic-offset 4)
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   (quote
+    (elixir-mode jtags zenburn-theme rust-mode puppet-mode paredit markdown-mode magit json-mode haskell-mode groovy-mode dockerfile-mode cider))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+
+(add-hook 'c-mode-common-hook
+  (lambda()
+    (local-set-key  (kbd "C-c o") 'ff-find-other-file)))
